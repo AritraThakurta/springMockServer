@@ -1,0 +1,45 @@
+[
+  {
+    "method": "GET",
+    "path": "/api/v1/users",
+    "responseStatus": 200,
+    "responseBody": "[{\"id\":1,\"name\":\"John Doe\"},{\"id\":2,\"name\":\"Jane Doe\"}]",
+    "responseDelayMs": 0
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/users",
+    "expectedRequestBody": "{\"name\":\"Jane\"}",
+    "responseStatus": 201,
+    "responseBody": "{\"message\": \"User Jane created\"}",
+    "responseDelayMs": 0
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/users",
+    "expectedRequestBody": "{\"name\":\"Ghost\"}",
+    "responseStatus": 404,
+    "responseBody": "{\"error\": \"Ghost not allowed\"}",
+    "responseDelayMs": 0
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/users",
+    "expectedBodyContains": {
+      "role": "admin"
+    },
+    "responseStatus": 200,
+    "responseBody": "{\"message\": \"Admin created\"}",
+    "responseDelayMs": 0
+  },
+  {
+    "method": "POST",
+    "path": "/api/v1/users",
+    "expectedBodyContains": {
+      "role": "user"
+    },
+    "responseStatus": 200,
+    "responseBody": "{\"message\": \"Regular user created\"}",
+    "responseDelayMs": 0
+  }
+]

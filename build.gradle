@@ -1,0 +1,9 @@
+plugins {
+    id 'java'
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-web:3.5.0'
+    implementation 'org.postgresql:postgresql:42.7.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.12.0'
+}
